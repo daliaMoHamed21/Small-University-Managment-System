@@ -1,0 +1,47 @@
+﻿@model Student 
+@{
+    Layout = "Layout_2";
+    SelectList stdel = new SelectList(ViewBag.depts, "DeptId", "Name");
+    //ViewBag.Title = "Student Create";
+}
+
+@* <!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css" />
+
+    <title>Create</title>
+</head>
+<body> *@
+
+    <form method="post">
+        <label asp-for="Name" class="form-label"></label>
+        <input asp-for="Name" class="form-control" />
+        <span class="text-danger" asp-validation-for="Name"></span>
+
+        <label asp-for="Age" class="form-label"></label>
+    <input asp-for="Age" class="form-control" /></br>
+    <span class="text-danger"  asp-validation-for="Age"></span>
+
+    <label asp-for="Email" class="form-label"></label>
+    <input asp-for="Email" class="form-control" /></br>
+    <span class="text-danger" asp-validation-for="Email"></span>
+
+    <label asp-for="DepartmentId">Student Department Number</label>
+    <span class="text-danger" asp-validation-for="DepartmentId"></span>
+    <select asp-for="DepartmentId" asp-items="stdel">
+    </select>
+
+    <input type="submit" value="add" class="btn-btn-primary" />
+    </form>
+    
+
+
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script src="~/lib//jquery-validation/dist/jquery.validate.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+   
+@* </body>
+</html> *@

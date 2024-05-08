@@ -1,0 +1,72 @@
+﻿@model IEnumerable<Student>
+@{
+     Layout = "Layout_2";
+    //ViewBag.Title = "student_List";
+}
+
+@* <!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css" />
+    <title>Index</title>
+</head>
+<body>
+ *@
+    @* <form action="/Student/Add" method="get">
+    <input type="text" name="Id" />
+    <select name="Names" multiple>
+    <option>Dalia</option>
+    <option>Aya</option>
+    <option>Basma</option>
+    <option>Omnia</option>
+                      
+    </select><br />
+    Dalia <input name="Degree.1" type="text" />
+    <br />
+    Aya <input name="Degree.2" type="text" />
+    <br />
+    Basma <input name="Degree.3" type="text" />
+    <br />
+    Omnia <input name="Degree.4" type="text" />
+    <br />
+
+    <input type="submit" value="Add" />
+    </form>  *@
+
+    <a asp-action="Create" asp-controller="Student" class="btn btn-primary">Create</a>
+    <table class= "table table-bordered table-hover">
+      <thead>
+           <tr>
+              <th>Id</th>
+              <th>Name</th>
+              <th>Age</th>
+              <th>Department</th>
+              <th></th>
+           </tr>
+
+      </thead>
+      <tbody>
+            @foreach(Student item in Model)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.Name</td>
+                    <td>@item.Age</td>
+                    <td>@item.Department?.DeptName</td>
+                    <td>
+                        <a asp-controller="Student"  asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning">Update</a>
+                    </td>
+                    
+                </tr>
+            }
+            
+     </tbody>
+    </table>
+@*     @section Script{
+            <h1 class=" alert alert-danger">After Footer</h1>
+
+    } *@
+@* </body>
+</html> *@

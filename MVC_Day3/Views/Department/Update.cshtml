@@ -1,0 +1,13 @@
+﻿@model Department
+@{
+     Layout = "Layout_2";
+    //ViewBag.Title = "department update";
+}
+
+
+    <form method="post">
+        <label>Department Id</label> <input type="text" class="form-control" name="DeptId" value="@Model?.DeptId" /><br />
+        <label>Department Name</label> <input type="text" class="form-control" name="Name" value="@Model?.DeptName" /><br />
+        <input type="submit" value="Update" class="btn btn-success" />
+    </form>
+

@@ -1,0 +1,35 @@
+﻿@model IEnumerable<Department>
+@{
+    Layout = "Layout_2";
+    //ViewBag.Title = "department_List";
+}
+
+    <br />
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Department ID</th>
+                <th>Department Name</th>
+               
+            </tr>
+        </thead>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @item.DeptId
+                </td>
+                <td>@item.DeptName</td>
+                <td>
+                    <a href="/Department/Details/@item.DeptId" class="btn btn-dark">Details</a>
+                </td>
+                <td>
+                    <a href="/Department/Delete/@item.DeptId" class="btn btn-dark" onclick="return confirm('Are you sure')">Delete</a>
+                </td>
+                <td>
+                    <a href="/Department/Edit/@item.DeptId" class="btn btn-dark" >Edit</a>
+                </td>
+            </tr>     
+        }
+    </table>
+    <a href="/Department/Create" class="btn btn-success">Create</a> 

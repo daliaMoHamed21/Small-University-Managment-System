@@ -1,0 +1,39 @@
+﻿@using System.ComponentModel.DataAnnotations
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css" />
+
+</head>
+<body>
+    <div>
+        <a asp-action="Index" asp-controller="Student" class="btn btn-primary">Students</a>
+        <a asp-action="Index" asp-controller="Department" class="btn btn-primary">Department</a>
+   
+    </div>
+
+  @*   Can use RenderBody only one *@
+
+    @RenderBody()
+    <div>
+        <h1 class="alert alert-info"> My First Footer</h1>
+
+    </div>
+
+
+    @* can use Section more than one  *@
+
+     @RenderSection("scripts",false)
+
+
+
+</body>
+</html>
